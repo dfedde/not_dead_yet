@@ -1,22 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://btsimmf41v30e"]
+[gd_scene load_steps=9 format=3 uid="uid://btsimmf41v30e"]
 
 [ext_resource type="Script" path="res://mini-games/PlugGame/PlugGame.gd" id="1_3iiju"]
 [ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_dqlox"]
 [ext_resource type="Texture2D" uid="uid://h10owc0hnhuy" path="res://mini-games/assets/kenney_input-prompts/PlayStation Series/Default/playstation_button_color_cross_outline.png" id="3_h0rgu"]
 [ext_resource type="Texture2D" uid="uid://cycuhep0pfepn" path="res://mini-games/PlugGame/assets/usb port.png" id="4_84c0h"]
 [ext_resource type="Script" path="res://mini-games/PlugGame/hub.gd" id="4_yww0a"]
-[ext_resource type="Resource" uid="uid://duvwmgj2u2go3" path="res://mini-games/PlugGame/assets/b button.tres" id="5_f3yfj"]
-[ext_resource type="Resource" uid="uid://1u8kumhoorh7" path="res://mini-games/PlugGame/assets/x button.tres" id="6_oo46b"]
-[ext_resource type="Resource" uid="uid://exqi7ct0fir3" path="res://mini-games/PlugGame/assets/y button.tres" id="7_oxfw8"]
-[ext_resource type="Resource" uid="uid://bik7k750ntuas" path="res://mini-games/PlugGame/assets/a button.tres" id="8_oj2oe"]
-[ext_resource type="Resource" uid="uid://b5rdpybn7onnj" path="res://mini-games/PlugGame/assets/dpad down.tres" id="9_2km0e"]
-[ext_resource type="Resource" uid="uid://cg0dx3ab58wxn" path="res://mini-games/PlugGame/assets/dpad up.tres" id="10_6myqf"]
-[ext_resource type="Resource" uid="uid://dylrv8mifol6d" path="res://mini-games/PlugGame/assets/dpad left.tres" id="11_if8jn"]
-[ext_resource type="Resource" uid="uid://b1r1ikixy4464" path="res://mini-games/PlugGame/assets/dpad right.tres" id="12_ev7ak"]
-[ext_resource type="Resource" uid="uid://dtr1eksa7ntvd" path="res://mini-games/PlugGame/assets/rt_bump.tres" id="13_auoil"]
-[ext_resource type="Resource" uid="uid://wh5duh3pdkv3" path="res://mini-games/PlugGame/assets/left_bump.tres" id="14_6mqm0"]
-[ext_resource type="Resource" uid="uid://csmu62t88jr8c" path="res://mini-games/PlugGame/assets/left_trig.tres" id="15_5egah"]
-[ext_resource type="Resource" uid="uid://cwkw37f33v5xv" path="res://mini-games/PlugGame/assets/rt_trig.tres" id="16_ebk2f"]
+[ext_resource type="Script" path="res://Button_mapping.gd" id="5_7ay8b"]
+
+[sub_resource type="Resource" id="Resource_v3ja0"]
+script = ExtResource("5_7ay8b")
+image = ExtResource("3_h0rgu")
+action = "plug_x"
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw234"]
 font_size = 64
@@ -47,7 +41,7 @@ offset_top = -29.0
 offset_right = 173.0
 offset_bottom = 35.0
 script = ExtResource("4_yww0a")
-buttons = Array[Resource("res://Button_mapping.gd")]([ExtResource("5_f3yfj"), ExtResource("6_oo46b"), ExtResource("7_oxfw8"), ExtResource("8_oj2oe"), ExtResource("9_2km0e"), ExtResource("10_6myqf"), ExtResource("11_if8jn"), ExtResource("12_ev7ak"), ExtResource("13_auoil"), ExtResource("14_6mqm0"), ExtResource("15_5egah"), ExtResource("16_ebk2f")])
+buttons = Array[ExtResource("5_7ay8b")]([SubResource("Resource_v3ja0")])
 
 [node name="Control" type="CenterContainer" parent="Node2D/HBoxContainer"]
 custom_minimum_size = Vector2(75, 43)
