@@ -26,3 +26,7 @@ func _on_crank_arm_win():
 		instructions_label.hide()
 		won_label.show()
 		over = true
+
+
+func _on_fail_timer_timeout():
+	pass # Replace with function body.
