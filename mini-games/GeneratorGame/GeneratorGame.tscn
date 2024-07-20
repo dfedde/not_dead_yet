@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://bkostaqmnfwra"]
 
-[ext_resource type="Script" path="res://mini-games/lemonGame/LemonGame.gd" id="1_44p34"]
-[ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_pgn6j"]
-[ext_resource type="Script" path="res://mini-games/lemonGame/hand.gd" id="3_4vjhx"]
-[ext_resource type="Texture2D" uid="uid://mhh6njpucb57" path="res://mini-games/lemonGame/assets/plug.png" id="4_3pud6"]
-[ext_resource type="Script" path="res://mini-games/lemonGame/coin.gd" id="5_wmp1g"]
-[ext_resource type="Texture2D" uid="uid://uhu6tvk3wel8" path="res://mini-games/lemonGame/assets/lemon.png" id="6_3bspr"]
+[ext_resource type="Script" path="res://mini-games/lemonGame/LemonGame.gd" id="1_gysp6"]
+[ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_ev5pm"]
+[ext_resource type="Script" path="res://mini-games/lemonGame/hand.gd" id="3_fkb4j"]
+[ext_resource type="Texture2D" uid="uid://mhh6njpucb57" path="res://mini-games/lemonGame/assets/plug.png" id="4_0ig0j"]
+[ext_resource type="Script" path="res://mini-games/lemonGame/coin.gd" id="5_gdskm"]
+[ext_resource type="Texture2D" uid="uid://uhu6tvk3wel8" path="res://mini-games/lemonGame/assets/lemon.png" id="6_1rarx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0qqla"]
 radius = 37.0135
@@ -30,28 +30,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_44p34")
+script = ExtResource("1_gysp6")
 metadata/_edit_vertical_guides_ = [-338.0]
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(251, 251)
-texture = ExtResource("2_pgn6j")
+texture = ExtResource("2_ev5pm")
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="hand" type="CharacterBody2D" parent="Node2D"]
 position = Vector2(554, 37)
-script = ExtResource("3_4vjhx")
+script = ExtResource("3_fkb4j")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/hand"]
 position = Vector2(0, -294)
-texture = ExtResource("4_3pud6")
+texture = ExtResource("4_0ig0j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/hand"]
 position = Vector2(0, 52)
 shape = SubResource("CircleShape2D_0qqla")
-script = ExtResource("5_wmp1g")
+script = ExtResource("5_gdskm")
 
 [node name="Lemon1" type="Area2D" parent="Node2D"]
 position = Vector2(260, 280)
@@ -59,7 +59,7 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Lemon1"]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("6_3bspr")
+texture = ExtResource("6_1rarx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lemon1"]
 rotation = 1.5708

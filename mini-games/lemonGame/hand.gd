@@ -6,7 +6,7 @@ var over = false
 signal win
 signal fail
 
-func _input(event):
+func _input_(event):
 	if Input.is_action_just_pressed("Lemon_action"):
 		stab = true
 

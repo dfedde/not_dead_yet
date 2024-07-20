@@ -1,16 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://btsimmf41v30e"]
+[gd_scene load_steps=7 format=3 uid="uid://btsimmf41v30e"]
 
 [ext_resource type="Script" path="res://mini-games/PlugGame/PlugGame.gd" id="1_3iiju"]
 [ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_dqlox"]
 [ext_resource type="Texture2D" uid="uid://h10owc0hnhuy" path="res://mini-games/assets/kenney_input-prompts/PlayStation Series/Default/playstation_button_color_cross_outline.png" id="3_h0rgu"]
 [ext_resource type="Texture2D" uid="uid://cycuhep0pfepn" path="res://mini-games/PlugGame/assets/usb port.png" id="4_84c0h"]
 [ext_resource type="Script" path="res://mini-games/PlugGame/hub.gd" id="4_yww0a"]
-[ext_resource type="Script" path="res://Button_mapping.gd" id="5_7ay8b"]
-
-[sub_resource type="Resource" id="Resource_v3ja0"]
-script = ExtResource("5_7ay8b")
-image = ExtResource("3_h0rgu")
-action = "plug_x"
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw234"]
 font_size = 64
@@ -35,55 +29,54 @@ position = Vector2(270, 290)
 [node name="hub" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("4_84c0h")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Node2D"]
+[node name="hub2" type="HBoxContainer" parent="Node2D"]
 offset_left = -215.0
 offset_top = -29.0
 offset_right = 173.0
 offset_bottom = 35.0
 script = ExtResource("4_yww0a")
-buttons = Array[ExtResource("5_7ay8b")]([SubResource("Resource_v3ja0")])
 
-[node name="Control" type="CenterContainer" parent="Node2D/HBoxContainer"]
+[node name="Control" type="CenterContainer" parent="Node2D/hub2"]
 custom_minimum_size = Vector2(75, 43)
 layout_mode = 2
 
-[node name="button1" type="TextureRect" parent="Node2D/HBoxContainer/Control"]
+[node name="button1" type="TextureRect" parent="Node2D/hub2/Control"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_h0rgu")
 
-[node name="Control2" type="CenterContainer" parent="Node2D/HBoxContainer"]
+[node name="Control2" type="CenterContainer" parent="Node2D/hub2"]
 custom_minimum_size = Vector2(73, 43)
 layout_mode = 2
 
-[node name="button2" type="TextureRect" parent="Node2D/HBoxContainer/Control2"]
+[node name="button2" type="TextureRect" parent="Node2D/hub2/Control2"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_h0rgu")
 
-[node name="Control3" type="CenterContainer" parent="Node2D/HBoxContainer"]
+[node name="Control3" type="CenterContainer" parent="Node2D/hub2"]
 custom_minimum_size = Vector2(74, 43)
 layout_mode = 2
 
-[node name="button3" type="TextureRect" parent="Node2D/HBoxContainer/Control3"]
+[node name="button3" type="TextureRect" parent="Node2D/hub2/Control3"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_h0rgu")
 
-[node name="Control4" type="CenterContainer" parent="Node2D/HBoxContainer"]
+[node name="Control4" type="CenterContainer" parent="Node2D/hub2"]
 custom_minimum_size = Vector2(74, 43)
 layout_mode = 2
 
-[node name="button4" type="TextureRect" parent="Node2D/HBoxContainer/Control4"]
+[node name="button4" type="TextureRect" parent="Node2D/hub2/Control4"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_h0rgu")
 
-[node name="Control5" type="CenterContainer" parent="Node2D/HBoxContainer"]
+[node name="Control5" type="CenterContainer" parent="Node2D/hub2"]
 custom_minimum_size = Vector2(74, 43)
 layout_mode = 2
 
-[node name="button5" type="TextureRect" parent="Node2D/HBoxContainer/Control5"]
+[node name="button5" type="TextureRect" parent="Node2D/hub2/Control5"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_h0rgu")
@@ -121,6 +114,13 @@ layout_mode = 2
 text = "Fail!"
 label_settings = SubResource("LabelSettings_cw234")
 
+[node name="nope" type="Label" parent="CenterContainer4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Nope!"
+label_settings = SubResource("LabelSettings_cw234")
+
 [node name="won" type="Label" parent="CenterContainer4"]
 unique_name_in_owner = true
 visible = false
@@ -138,6 +138,13 @@ label_settings = SubResource("LabelSettings_cw234")
 unique_name_in_owner = true
 wait_time = 1.5
 one_shot = true
-autostart = true
 
+[node name="nope_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.2
+one_shot = true
+
+[connection signal="nope" from="Node2D/hub2" to="." method="_on_hub_2_nope"]
+[connection signal="win" from="Node2D/hub2" to="." method="_on_hub_2_win"]
 [connection signal="timeout" from="fail_timer" to="." method="_on_fail_timer_timeout"]
+[connection signal="timeout" from="nope_timer" to="." method="_on_nope_timer_timeout"]

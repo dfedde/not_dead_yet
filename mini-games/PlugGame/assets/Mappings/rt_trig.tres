@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("2_04kyt")
 image = ExtResource("1_kwo3t")
-action = ""
+action = "Plug_rt_trig"
