@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ButtonMapping" load_steps=3 format=3 uid="uid://wh5duh3pdkv3"]
+
+[ext_resource type="Texture2D" uid="uid://5aop4828jlm6" path="res://mini-games/assets/kenney_input-prompts/Xbox Series/Default/xbox_lb.png" id="1_06sii"]
+[ext_resource type="Script" path="res://Button_mapping.gd" id="2_8s43x"]
+
+[resource]
+script = ExtResource("2_8s43x")
+image = ExtResource("1_06sii")
+action = "Plug_left_bump"

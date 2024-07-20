@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ButtonMapping" load_steps=3 format=3 uid="uid://b5rdpybn7onnj"]
+
+[ext_resource type="Texture2D" uid="uid://cil66cnecowa" path="res://mini-games/assets/kenney_input-prompts/Xbox Series/Default/xbox_dpad_down.png" id="1_sstgy"]
+[ext_resource type="Script" path="res://Button_mapping.gd" id="2_5t6qw"]
+
+[resource]
+script = ExtResource("2_5t6qw")
+image = ExtResource("1_sstgy")
+action = "Plug_dpad_down"
