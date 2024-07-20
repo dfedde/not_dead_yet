@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://btsimmf41v30e"]
+[gd_scene load_steps=10 format=3 uid="uid://btsimmf41v30e"]
 
 [ext_resource type="Script" path="res://mini-games/PlugGame/PlugGame.gd" id="1_3iiju"]
 [ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_dqlox"]
 [ext_resource type="Texture2D" uid="uid://h10owc0hnhuy" path="res://mini-games/assets/kenney_input-prompts/PlayStation Series/Default/playstation_button_color_cross_outline.png" id="3_h0rgu"]
 [ext_resource type="Texture2D" uid="uid://cycuhep0pfepn" path="res://mini-games/PlugGame/assets/usb port.png" id="4_84c0h"]
 [ext_resource type="Script" path="res://mini-games/PlugGame/hub.gd" id="4_yww0a"]
+[ext_resource type="Script" path="res://Button_mapping.gd" id="5_7ay8b"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s7y4w"]
+
+[sub_resource type="Resource" id="Resource_tcub5"]
+script = ExtResource("5_7ay8b")
+image = SubResource("CompressedTexture2D_s7y4w")
+action = ""
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw234"]
 font_size = 64
@@ -35,6 +43,7 @@ offset_top = -29.0
 offset_right = 173.0
 offset_bottom = 35.0
 script = ExtResource("4_yww0a")
+buttons = Array[ExtResource("5_7ay8b")]([SubResource("Resource_tcub5")])
 
 [node name="Control" type="CenterContainer" parent="Node2D/HBoxContainer"]
 custom_minimum_size = Vector2(75, 43)
