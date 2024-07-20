@@ -2,4 +2,4 @@ extends HBoxContainer
 
 
 
-@export var buttons: Array[ButtonMa]
+@export var buttons: Array[ButtonMapping]
