@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://btsimmf41v30e"]
+
+[ext_resource type="Script" path="res://mini-games/PlugGame/PlugGame.gd" id="1_3iiju"]
+[ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_dqlox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cw234"]
+font_size = 64
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3iiju")
+metadata/_edit_vertical_guides_ = [-338.0]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(251, 251)
+texture = ExtResource("2_dqlox")
+
+[node name="timer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="timer" type="Label" parent="timer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "1
+"
+label_settings = SubResource("LabelSettings_cw234")
+
+[node name="CenterContainer4" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="fail" type="Label" parent="CenterContainer4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Fail!"
+label_settings = SubResource("LabelSettings_cw234")
+
+[node name="won" type="Label" parent="CenterContainer4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Charging!"
+label_settings = SubResource("LabelSettings_cw234")
+
+[node name="instructions" type="Label" parent="CenterContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Plug it!"
+label_settings = SubResource("LabelSettings_cw234")
+
+[node name="fail_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 1.5
+one_shot = true
+autostart = true

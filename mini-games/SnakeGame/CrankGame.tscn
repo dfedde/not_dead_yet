@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=3 uid="uid://m0mg8b66w0oe"]
+
+[ext_resource type="Script" path="res://mini-games/lemonGame/LemonGame.gd" id="1_br0wn"]
+[ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_lyn5u"]
+[ext_resource type="Script" path="res://mini-games/lemonGame/hand.gd" id="3_tydag"]
+[ext_resource type="Texture2D" uid="uid://mhh6njpucb57" path="res://mini-games/lemonGame/assets/plug.png" id="4_v1y1r"]
+[ext_resource type="Script" path="res://mini-games/lemonGame/coin.gd" id="5_dxmvd"]
+[ext_resource type="Texture2D" uid="uid://uhu6tvk3wel8" path="res://mini-games/lemonGame/assets/lemon.png" id="6_fdhv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qqla"]
+radius = 37.0135
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d586r"]
+radius = 64.0
+height = 192.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2nin"]
+size = Vector2(529.5, 42.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbgw1"]
+size = Vector2(116, 538)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qf6cr"]
+font_size = 64
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_br0wn")
+metadata/_edit_vertical_guides_ = [-338.0]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(251, 251)
+texture = ExtResource("2_lyn5u")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="hand" type="CharacterBody2D" parent="Node2D"]
+position = Vector2(554, 37)
+script = ExtResource("3_tydag")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/hand"]
+position = Vector2(0, -294)
+texture = ExtResource("4_v1y1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/hand"]
+position = Vector2(0, 52)
+shape = SubResource("CircleShape2D_0qqla")
+script = ExtResource("5_dxmvd")
+
+[node name="Lemon1" type="Area2D" parent="Node2D"]
+position = Vector2(260, 280)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lemon1"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_fdhv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lemon1"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_d586r")
+
+[node name="Fail_Zone" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Fail_Zone"]
+position = Vector2(256.75, 513.75)
+shape = SubResource("RectangleShape2D_m2nin")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Fail_Zone"]
+position = Vector2(-58, 267)
+shape = SubResource("RectangleShape2D_qbgw1")
+
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="won" type="Label" parent="CenterContainer3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Charging!"
+label_settings = SubResource("LabelSettings_qf6cr")
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="fail" type="Label" parent="CenterContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Fail!"
+label_settings = SubResource("LabelSettings_qf6cr")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 88.0
+grow_horizontal = 2
+
+[node name="instructions" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stab it!"
+label_settings = SubResource("LabelSettings_qf6cr")
+
+[connection signal="input_event" from="Node2D/hand" to="Node2D/hand" method="_on_input_event"]
+[connection signal="win" from="Node2D/hand" to="Node2D" method="_on_hand_win"]
+[connection signal="fail" from="Node2D/hand/CollisionShape2D" to="." method="_on_collision_shape_2d_fail"]
+[connection signal="fail" from="Node2D/hand/CollisionShape2D" to="Node2D/hand" method="_on_collision_shape_2d_fail"]
+[connection signal="win" from="Node2D/hand/CollisionShape2D" to="." method="_on_collision_shape_2d_win"]
+[connection signal="win" from="Node2D/hand/CollisionShape2D" to="Node2D/hand" method="_on_collision_shape_2d_win"]
+[connection signal="body_entered" from="Node2D/Lemon1" to="Node2D" method="_on_lemon_1_body_entered"]
+[connection signal="body_entered" from="Node2D/Lemon1" to="Node2D/hand/CollisionShape2D" method="_on_lemon_1_body_entered"]
+[connection signal="body_entered" from="Node2D/Fail_Zone" to="Node2D/hand/CollisionShape2D" method="_on_fail_zone_body_entered"]
