@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8id3m172lfte"]
+[gd_scene load_steps=14 format=3 uid="uid://8id3m172lfte"]
 
 [ext_resource type="Script" path="res://mini-games/lemonGame/LemonGame.gd" id="1_2tjap"]
 [ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_boitx"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://uhu6tvk3wel8" path="res://mini-games/lemonGame/assets/lemon.png" id="3_2vh0q"]
 [ext_resource type="Texture2D" uid="uid://mhh6njpucb57" path="res://mini-games/lemonGame/assets/plug.png" id="5_782jr"]
 [ext_resource type="Script" path="res://mini-games/lemonGame/coin.gd" id="5_tacno"]
+[ext_resource type="Texture2D" uid="uid://bgks5of6n76td" path="res://mini-games/assets/kenney_input-prompts/Flairs/Default/flair_arrow_long.png" id="7_nroda"]
+[ext_resource type="Texture2D" uid="uid://cpevdo3ua0ipu" path="res://mini-games/assets/kenney_input-prompts/Xbox Series/Default/xbox_button_color_a_outline.png" id="8_mofht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0qqla"]
 radius = 37.0135
@@ -113,6 +115,16 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Stab it!"
 label_settings = SubResource("LabelSettings_qf6cr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(139, 158)
+rotation = 1.5708
+scale = Vector2(1.62977, 1.55243)
+texture = ExtResource("7_nroda")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(76, 144)
+texture = ExtResource("8_mofht")
 
 [connection signal="input_event" from="Node2D/hand" to="Node2D/hand" method="_on_input_event"]
 [connection signal="win" from="Node2D/hand" to="Node2D" method="_on_hand_win"]
