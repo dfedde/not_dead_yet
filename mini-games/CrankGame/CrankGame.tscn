@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://mini-games/CrankGame/CrankGame.gd" id="1_mdnko"]
 [ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_bgdrb"]
 [ext_resource type="Texture2D" uid="uid://b2jks5na13iu1" path="res://mini-games/CrankGame/assets/machine.png" id="3_7lkkv"]
-[ext_resource type="Script" path="res://mini-games/CrankGame/crankArm.gd" id="4_r10tm"]
+[ext_resource type="Script" path="res://mini-games/GeneratorGame/PullCord.gd" id="4_ls8a1"]
 [ext_resource type="Texture2D" uid="uid://copan8lj5xgwh" path="res://mini-games/CrankGame/assets/crank.png" id="5_1h5uo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qf6cr"]
@@ -33,7 +33,7 @@ texture = ExtResource("3_7lkkv")
 
 [node name="crankArm" type="Node2D" parent="."]
 position = Vector2(250, 215)
-script = ExtResource("4_r10tm")
+script = ExtResource("4_ls8a1")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="crankArm"]

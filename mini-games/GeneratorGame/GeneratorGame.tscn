@@ -1,85 +1,82 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkostaqmnfwra"]
+[gd_scene load_steps=7 format=3 uid="uid://bkostaqmnfwra"]
 
-[ext_resource type="Script" path="res://mini-games/lemonGame/LemonGame.gd" id="1_gysp6"]
+[ext_resource type="Script" path="res://mini-games/GeneratorGame/GeneratorGame.gd" id="1_vkcpf"]
 [ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_ev5pm"]
-[ext_resource type="Script" path="res://mini-games/lemonGame/hand.gd" id="3_fkb4j"]
-[ext_resource type="Texture2D" uid="uid://mhh6njpucb57" path="res://mini-games/lemonGame/assets/plug.png" id="4_0ig0j"]
-[ext_resource type="Script" path="res://mini-games/lemonGame/coin.gd" id="5_gdskm"]
-[ext_resource type="Texture2D" uid="uid://uhu6tvk3wel8" path="res://mini-games/lemonGame/assets/lemon.png" id="6_1rarx"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0qqla"]
-radius = 37.0135
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d586r"]
-radius = 64.0
-height = 192.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2nin"]
-size = Vector2(529.5, 42.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbgw1"]
-size = Vector2(116, 538)
+[ext_resource type="Texture2D" uid="uid://c0pylji052btc" path="res://mini-games/GeneratorGame/assets/generator.png" id="3_h6eny"]
+[ext_resource type="Script" path="res://mini-games/GeneratorGame/PullCord.gd" id="4_7v3b5"]
+[ext_resource type="Texture2D" uid="uid://dagc2kmmkyibv" path="res://mini-games/GeneratorGame/assets/chain.png" id="5_3hxow"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qf6cr"]
 font_size = 64
 
 [node name="Control" type="Control"]
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_gysp6")
+anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 500.0
+script = ExtResource("1_vkcpf")
 metadata/_edit_vertical_guides_ = [-338.0]
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(251, 251)
 texture = ExtResource("2_ev5pm")
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="hand" type="CharacterBody2D" parent="Node2D"]
-position = Vector2(554, 37)
-script = ExtResource("3_fkb4j")
+[node name="GeneratorBody" type="Node2D" parent="."]
+position = Vector2(250, 267)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/hand"]
-position = Vector2(0, -294)
-texture = ExtResource("4_0ig0j")
+[node name="Sprite2D" type="Sprite2D" parent="GeneratorBody"]
+position = Vector2(1, 0)
+texture = ExtResource("3_h6eny")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/hand"]
-position = Vector2(0, 52)
-shape = SubResource("CircleShape2D_0qqla")
-script = ExtResource("5_gdskm")
-
-[node name="Lemon1" type="Area2D" parent="Node2D"]
-position = Vector2(260, 280)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Lemon1"]
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("6_1rarx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lemon1"]
+[node name="PullCord" type="Node2D" parent="."]
+position = Vector2(325, 273)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_d586r")
+script = ExtResource("4_7v3b5")
 
-[node name="Fail_Zone" type="Area2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="PullCord"]
+position = Vector2(0, 21)
+rotation = -1.5708
+texture = ExtResource("5_3hxow")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Fail_Zone"]
-position = Vector2(256.75, 513.75)
-shape = SubResource("RectangleShape2D_m2nin")
+[node name="retract_timer" type="Timer" parent="PullCord"]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Fail_Zone"]
-position = Vector2(-58, 267)
-shape = SubResource("RectangleShape2D_qbgw1")
+[node name="timer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="timer" type="Label" parent="timer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "1
+"
+label_settings = SubResource("LabelSettings_qf6cr")
 
 [node name="CenterContainer3" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+
+[node name="fail" type="Label" parent="CenterContainer3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Fail!"
+label_settings = SubResource("LabelSettings_qf6cr")
 
 [node name="won" type="Label" parent="CenterContainer3"]
 unique_name_in_owner = true
@@ -88,38 +85,31 @@ layout_mode = 2
 text = "Charging!"
 label_settings = SubResource("LabelSettings_qf6cr")
 
-[node name="CenterContainer2" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-
-[node name="fail" type="Label" parent="CenterContainer2"]
+[node name="nope" type="Label" parent="CenterContainer3"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-text = "Fail!"
+text = "Nope!"
 label_settings = SubResource("LabelSettings_qf6cr")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 88.0
-grow_horizontal = 2
-
-[node name="instructions" type="Label" parent="CenterContainer"]
+[node name="instructions" type="Label" parent="CenterContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Stab it!"
+text = "Start it!"
 label_settings = SubResource("LabelSettings_qf6cr")
 
-[connection signal="input_event" from="Node2D/hand" to="Node2D/hand" method="_on_input_event"]
-[connection signal="win" from="Node2D/hand" to="Node2D" method="_on_hand_win"]
-[connection signal="fail" from="Node2D/hand/CollisionShape2D" to="." method="_on_collision_shape_2d_fail"]
-[connection signal="fail" from="Node2D/hand/CollisionShape2D" to="Node2D/hand" method="_on_collision_shape_2d_fail"]
-[connection signal="win" from="Node2D/hand/CollisionShape2D" to="." method="_on_collision_shape_2d_win"]
-[connection signal="win" from="Node2D/hand/CollisionShape2D" to="Node2D/hand" method="_on_collision_shape_2d_win"]
-[connection signal="body_entered" from="Node2D/Lemon1" to="Node2D" method="_on_lemon_1_body_entered"]
-[connection signal="body_entered" from="Node2D/Lemon1" to="Node2D/hand/CollisionShape2D" method="_on_lemon_1_body_entered"]
-[connection signal="body_entered" from="Node2D/Fail_Zone" to="Node2D/hand/CollisionShape2D" method="_on_fail_zone_body_entered"]
+[node name="fail_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="nope_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
+
+[connection signal="nope" from="PullCord" to="." method="_on_pull_cord_nope"]
+[connection signal="win" from="PullCord" to="." method="_on_pull_cord_win"]
+[connection signal="timeout" from="fail_timer" to="." method="_on_fail_timer_timeout"]
+[connection signal="timeout" from="nope_timer" to="." method="_on_nope_timer_timeout"]

@@ -26,4 +26,3 @@ func _on_crank_arm_win():
 		instructions_label.hide()
 		won_label.show()
 		over = true
-
