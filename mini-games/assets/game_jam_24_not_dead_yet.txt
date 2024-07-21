@@ -1,0 +1,27 @@
+narrative 
+music 
+polish
+minor sounds fx  
+
+lemon - (Stab!) "Stab that Lemon!" "Get that juice!" "When life gives you lemons..." "I'd rather have lemonaide" 
+"This charger is a real lemon...heh" "No way this is OSHA approved"
+
+crank (rotate!) - "Just like Ye Olde Times" "I've been crankin' on the railroad..." "There's gotta be a better way than this..." 
+"No gym for me today!" "All hail the mighty crank!"  
+
+find the plug (Only one works!) - "Dang, gonna have to fix that" "Anybody got a soldering kit?!" "Why haven't I replaced this yet!" 
+"Why is it a different one every time?" "Please work, please work, please work"
+
+pull start generator (Pull it!) - "Hope I'm not outta gas" "How can this be the easiest solution?" 
+"This seems excessive, doesn't it?" "Should I open a window?" "Shoulda got a push-start" 
+
+snake (Snake it!) - "Ssssss-sneaky sssssss-snake" "Snakes, gross" "This Snake isn't Solid, Liquid, Venomous, or Naked :/" "Hope they don't mind" 
+"Why is it always snakes!?" 
+
+General - "Muh phone!" "More power!" "Need a new battery :(" "Free Palastine and the Congo!!!" "Trans rights!" "Way to go!" 
+____________
+applause/completion/positive - "Well done!" "The battery may yet live!" "Awesome!" "Yeeeeeehaw!" "Git-R-Done™"
+
+fail/try again - "Oh no!" "Ope, my bad" "MY BATTERY!" "*Expletive Deleted*" "Time for a new battery :("
+
+
