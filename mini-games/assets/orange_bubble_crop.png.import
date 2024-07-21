@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://x07t5wfwtn47"
+=======
+uid="uid://6kgd1p6f1jn"
+>>>>>>> 2b9541b (first maze)
 path="res://.godot/imported/orange_bubble_crop.png-20a7b50fc1501a785c5514154494be3e.ctex"
 metadata={
 "vram_texture": false
