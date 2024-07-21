@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8id3m172lfte"]
+[gd_scene load_steps=15 format=3 uid="uid://8id3m172lfte"]
 
 [ext_resource type="Script" path="res://mini-games/lemonGame/LemonGame.gd" id="1_2tjap"]
 [ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_boitx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://uhu6tvk3wel8" path="res://mini-games/lemonGame/assets/lemon.png" id="3_2vh0q"]
 [ext_resource type="Texture2D" uid="uid://mhh6njpucb57" path="res://mini-games/lemonGame/assets/plug.png" id="5_782jr"]
 [ext_resource type="Script" path="res://mini-games/lemonGame/coin.gd" id="5_tacno"]
+[ext_resource type="AudioStream" uid="uid://dxy1x3owc0rpn" path="res://mini-games/lemonGame/assets/orange hit soft 4.wav" id="7_fr8sb"]
 [ext_resource type="Texture2D" uid="uid://bgks5of6n76td" path="res://mini-games/assets/kenney_input-prompts/Flairs/Default/flair_arrow_long.png" id="7_nroda"]
 [ext_resource type="Texture2D" uid="uid://cpevdo3ua0ipu" path="res://mini-games/assets/kenney_input-prompts/Xbox Series/Default/xbox_button_color_a_outline.png" id="8_mofht"]
 
@@ -89,6 +90,10 @@ visible = false
 layout_mode = 2
 text = "Charging!"
 label_settings = SubResource("LabelSettings_qf6cr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer3"]
+stream = ExtResource("7_fr8sb")
+volume_db = 5.984
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 1

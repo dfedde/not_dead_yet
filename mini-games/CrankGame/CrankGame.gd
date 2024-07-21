@@ -23,6 +23,7 @@ func _on_timer_timeout():
 		fail_label.show()
 		over = true
 		end.call("fail")
+		
 
 func _on_crank_arm_win():
 	if ! over:

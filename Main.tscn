@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bok76hu2xnw4y"]
+[gd_scene load_steps=7 format=3 uid="uid://bok76hu2xnw4y"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_wbjj8"]
-[ext_resource type="PackedScene" uid="uid://b2jo5emabqcag" path="res://mini-games/CrankGame/CrankGame.tscn" id="2_063ld"]
+[ext_resource type="Texture2D" uid="uid://bheppk6rjs6k" path="res://mini-games/assets/bg.png" id="2_58vih"]
+[ext_resource type="Texture2D" uid="uid://t5066xdijjvc" path="res://mini-games/assets/phone 2.png" id="3_fadlq"]
+[ext_resource type="Texture2D" uid="uid://c5yqs3cebr8cx" path="res://mini-games/assets/battery.png" id="4_24jii"]
+[ext_resource type="Texture2D" uid="uid://be1clgvxxlcgp" path="res://mini-games/assets/pink_bubble_crop.png" id="5_qbgxn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2v5uk"]
+font_size = 28
+font_color = Color(0, 0, 0, 1)
 
 [node name="Control3" type="Control"]
 layout_mode = 3
@@ -11,6 +18,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wbjj8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(587.5, 323)
+scale = Vector2(2.346, 1.276)
+texture = ExtResource("2_58vih")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(587, 426)
+rotation = -0.71733
+texture = ExtResource("3_fadlq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(6.6859, 4.50542)
+rotation = 1.58476
+scale = Vector2(1.36809, 1.28975)
+texture = ExtResource("4_24jii")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(848, 169)
+scale = Vector2(0.223338, 0.166407)
+texture = ExtResource("5_qbgxn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 636.0
+offset_top = 108.0
+offset_right = 1075.0
+offset_bottom = 202.0
+text = "(Your Phone is) Not Dead Yet"
+label_settings = SubResource("LabelSettings_2v5uk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -31,5 +70,3 @@ layout_mode = 2
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
 handle_input_locally = false
 render_target_update_mode = 4
-
-[node name="Control2" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_063ld")]
