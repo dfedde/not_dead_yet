@@ -20,7 +20,3 @@ func _on_collision_shape_2d_win():
 	instructions_label.hide()
 	won_label.show()
 	end.call("win")
-
-
-func _on_timer_timeout():
-	pass # Replace with function body.

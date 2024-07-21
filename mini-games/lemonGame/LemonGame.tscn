@@ -25,7 +25,7 @@ size = Vector2(116, 538)
 [sub_resource type="LabelSettings" id="LabelSettings_qf6cr"]
 font_size = 64
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,6 @@ texture = ExtResource("2_boitx")
 [node name="hand" type="CharacterBody2D" parent="Node2D"]
 position = Vector2(554, 37)
 script = ExtResource("2_owmke")
-speed = 500
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/hand"]

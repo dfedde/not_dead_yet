@@ -7,6 +7,7 @@ var games: Array[PackedScene] = [
 	load("res://mini-games/CrankGame/CrankGame.tscn"),
 	load("res://mini-games/GeneratorGame/GeneratorGame.tscn"),
 	load("res://mini-games/PlugGame/PlugGame.tscn"),
+	load("res://mini-games/SnakeGame/SnakeGame.tscn")
 ]
 var last_outcome = ""
 func load_game():

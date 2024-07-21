@@ -9,7 +9,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_qf6cr"]
 font_size = 64
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,6 +90,7 @@ label_settings = SubResource("LabelSettings_qf6cr")
 [node name="fail_timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 1.5
+one_shot = true
 autostart = true
 
 [connection signal="win" from="crankArm" to="." method="_on_crank_arm_win"]
