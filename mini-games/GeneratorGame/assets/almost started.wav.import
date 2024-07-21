@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyyg2fox8eohr"
+path="res://.godot/imported/almost started.wav-ccdf79033c9209f384f7138a82afca25.sample"
+
+[deps]
+
+source_file="res://mini-games/GeneratorGame/assets/almost started.wav"
+dest_files=["res://.godot/imported/almost started.wav-ccdf79033c9209f384f7138a82afca25.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

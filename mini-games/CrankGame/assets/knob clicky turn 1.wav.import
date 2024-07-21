@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://diyqejoyu4b1m"
+path="res://.godot/imported/knob clicky turn 1.wav-4cc5309a420464f28c88b4c4f879c067.sample"
+
+[deps]
+
+source_file="res://mini-games/CrankGame/assets/knob clicky turn 1.wav"
+dest_files=["res://.godot/imported/knob clicky turn 1.wav-4cc5309a420464f28c88b4c4f879c067.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
