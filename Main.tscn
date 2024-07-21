@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bok76hu2xnw4y"]
+[gd_scene load_steps=2 format=3 uid="uid://bok76hu2xnw4y"]
 
-[ext_resource type="PackedScene" uid="uid://b2jo5emabqcag" path="res://mini-games/CrankGame/CrankGame.tscn" id="1_hv1kw"]
-[ext_resource type="PackedScene" uid="uid://8id3m172lfte" path="res://mini-games/lemonGame/LemonGame.tscn" id="2_y8tda"]
-[ext_resource type="PackedScene" uid="uid://btsimmf41v30e" path="res://mini-games/PlugGame/PlugGame.tscn" id="3_um87b"]
+[ext_resource type="Script" path="res://Main.gd" id="1_wbjj8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wbjj8")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -31,25 +30,3 @@ layout_mode = 2
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
 handle_input_locally = false
 render_target_update_mode = 4
-
-[node name="Control" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_hv1kw")]
-
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(500, 500)
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
-handle_input_locally = false
-render_target_update_mode = 4
-
-[node name="Control" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("2_y8tda")]
-
-[node name="SubViewportContainer3" type="SubViewportContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(500, 500)
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer3"]
-handle_input_locally = false
-render_target_update_mode = 4
-
-[node name="Control" parent="GridContainer/SubViewportContainer3/SubViewport" instance=ExtResource("3_um87b")]

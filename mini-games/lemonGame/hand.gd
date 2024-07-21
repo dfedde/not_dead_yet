@@ -3,10 +3,11 @@ extends CharacterBody2D
 @export var speed = 600
 var stab = false
 var over = false
+
 signal win
 signal fail
 
-func _input_(event):
+func _input(_event):
 	if Input.is_action_just_pressed("Lemon_action"):
 		stab = true
 

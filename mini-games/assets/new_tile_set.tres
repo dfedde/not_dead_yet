@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://8eguos5i4ae5"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cqfdmssvwjbdn"]
 
 [ext_resource type="Texture2D" uid="uid://bskebnskss8j4" path="res://mini-games/assets/Hills.png" id="1_x7iny"]
 [ext_resource type="Texture2D" uid="uid://b2a2ep3ryfla3" path="res://mini-games/assets/Grass.png" id="2_an2mi"]

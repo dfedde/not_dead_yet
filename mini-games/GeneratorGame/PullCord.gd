@@ -8,7 +8,7 @@ signal nope
 @onready var timer = get_node("%retract_timer")
 
 func _physics_process(_delta: float):  
-	if ! timer.is_stopped: return
+	if ! timer.is_stopped(): return
 
 	var stickVector = Input.get_vector( 
 		"Crank_left","Crank_right",

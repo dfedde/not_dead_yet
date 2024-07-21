@@ -10,6 +10,8 @@ extends Control
 
 var over = false
 
+var end: Callable = func(_n): return
+
 func _process(_delta):
 	timer_label.text = "%2d" % (timer.time_left * 10)
 	
@@ -23,12 +25,14 @@ func _on_fail_timer_timeout():
 		instructions_label.hide()
 		fail_label.show()
 		over = true
+		end.call("fail")
 
 func _on_hub_2_win():
 	if ! over:
 		instructions_label.hide()
 		won_label.show()
 		over = true
+		end.call("win")
 
 
 func _on_hub_2_nope():

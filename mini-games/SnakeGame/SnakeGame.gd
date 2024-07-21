@@ -4,6 +4,8 @@ extends Control
 @onready var fail_label = get_node("%fail")
 @onready var instructions_label = get_node("%instructions")
 
+var end: Callable = func(_n): return
+
 func _ready():
 	won_label.hide()
 	fail_label.hide()

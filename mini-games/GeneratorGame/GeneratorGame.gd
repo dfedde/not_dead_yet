@@ -9,15 +9,19 @@ extends Control
 
 var over = false
 
+var end: Callable = func(_n): return
+
 func _ready():
 	won_label.hide()
 	fail_label.hide()
 	nope_label.hide()
 
 func _on_pull_cord_win():
-	instructions_label.hide()
-	won_label.show()
-	over = true
+	if ! over:
+		instructions_label.hide()
+		won_label.show()
+		over = true
+		end.call("win")
 
 func _on_fail_timer_timeout():
 	if ! over:
@@ -25,6 +29,7 @@ func _on_fail_timer_timeout():
 		nope_label.hide()
 		fail_label.show()
 		over = true
+		end.call("fail")
 
 func _on_pull_cord_nope():
 	if ! over:
